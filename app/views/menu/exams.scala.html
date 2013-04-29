@@ -1,0 +1,22 @@
+@(user: User)
+
+@main(Html("Vyšetrenia"), user) {
+        
+   <div id="menu">
+   	
+   		@for(exam <- Exam.findAll()) {
+			<div id="unit">	
+				<div id="unit_content">
+					<b>@exam.findings</b>
+					- @exam.getDate()
+				</div>	
+			</div>
+		}
+   	<p class="buttons">
+   	 <a href="@routes.Menu.show()">Späť</a>
+   	</p>
+   </div> 
+       
+  
+    
+}

@@ -1,0 +1,46 @@
+@(form: Form[Application.Login])
+
+<html>
+    <head>
+    	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
+        <title>Ocne Oddelenie</title>
+      </head>
+      
+    <body>
+		<div id="top_panel">
+			<div id="panel_items">
+				
+			</div>
+		</div> 
+			
+			<div id="loginform">
+				@helper.form(routes.Application.authenticate) {
+					
+					<img src="@routes.Assets.at("images/ocne_oddelenie1.png")" height="32px" class="logo">
+					
+					@if(form.hasGlobalErrors) { 
+						<p class="error">
+							@form.globalError.message
+						</p>
+					}
+					
+					@if(flash.contains("logout")) {
+						<p class="success">
+							@flash.get("logout")
+						</p>
+					}
+		
+					<p>
+						<input class="login" type="text" name="login" placeholder="Login">
+					</p>
+					<p>
+						<input class="login" type="password" name="password" placeholder="Heslo">
+					</p>
+					<p>
+						<button type="submit">Prihlásiť</button>
+					</p>
+					
+				}
+			</div>
+    </body>
+</html>

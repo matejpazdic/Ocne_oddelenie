@@ -1,0 +1,30 @@
+@(user: User, orders : List[Order])
+
+@main(Html("Objednávky"), user) {
+    
+    <div id="menu">
+		@if(flash.contains("user_created")) {
+			<p class="success">
+				@flash.get("user_created")
+			</p>
+		}
+						
+		
+		@if(flash.contains("settings_successful")) {
+					<p class="success">
+						@flash.get("settings_successful")
+					</p>
+		}
+		
+		@for(order <- orders) {
+			<div id="unit">	
+				<div id="unit_content">
+				<b>@order.getDate() - @order.user.login</b>	
+			</div>
+			</div>
+			<div id="control">
+				<a href="@routes.Menu.addExam(order.user.login, order.id)">Vyšetriť</a>				
+			</div>
+		}
+    </div>
+}

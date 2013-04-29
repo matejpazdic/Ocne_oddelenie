@@ -1,0 +1,36 @@
+@(user: User, examForm : Form[Menu.ExamForm], patient : String, order : Long)
+
+@main(Html("Vyšetrenie"), user) {
+    
+    <div id="menu">
+		@if(flash.contains("user_created")) {
+			<p class="success">
+				@flash.get("user_created")
+			</p>
+		}
+						
+		@helper.form(action = routes.Menu.addExamSubmit(patient, order)) {
+			
+				@if(examForm.hasGlobalErrors) { 
+					<p class="error">
+						@examForm.globalError.message
+					</p>
+				}	
+				
+				<div id="input_elements">
+					<p>
+						Nálezy: <textarea name="findings">Nálezy...</textarea>
+						<input type="hidden" name="login" value="@patient" />
+						
+					</p>
+					<p>
+					Dioptrie: <input type="text" name="dioptrie"/>
+					</p>
+						
+					<p class="buttons">
+						<button type="submit">Vytvor</button> <a href="@routes.Menu.show()">Späť</a> 
+					</p>
+				</div>
+			}
+    </div>
+}

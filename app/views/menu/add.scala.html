@@ -1,0 +1,36 @@
+@(user : User, form: Form[Menu.OrderForm])
+
+@main(Html("Nova objednavka"), user) {
+    	<div id="signupform">		
+			@if(flash.contains("table_name")) {
+					<p class="success">
+						@flash.get("table_name")
+					</p>
+			}
+
+			@if(flash.contains("table_name_err")) {
+					<p class="error">
+						@flash.get("table_name_err")
+					</p>
+			}  
+               
+			@helper.form(action = routes.Menu.addSubmit()) {
+			
+				@if(form.hasGlobalErrors) { 
+					<p class="error">
+						@form.globalError.message
+					</p>
+				}	
+				
+				<div id="input_elements">
+					<p>
+						Dátum : <input  type="text" placeholder="dd.mm.yyyy" name="date" id="inputField">
+					</p>
+						
+					<p class="buttons">
+						<button type="submit">Vytvor</button> <a href="@routes.Menu.show()">Späť</a> 
+					</p>
+				</div>
+			}
+        </div>         
+}

@@ -1,0 +1,69 @@
+@(title: Html, user: User)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jsDatePick_ltr.min.css")">
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jsDatePick.min.1.3.js")"></script>   
+        <title>Ocne oddelenie</title>
+        <script type="text/javascript">
+	window.onload = function(){
+		new JsDatePick({
+			useMode:2,
+			target:"inputField",
+			dateFormat:"%d.%m.%Y"
+	
+		});
+	};
+</script>
+    </head>
+    
+    <body>    
+        <div id="top_panel">
+			<div id="panel_items">
+				<div id="left_items">
+						<a href="@routes.Menu.show()">Domov</a> Prihlasený : 		
+						<strong id="user">
+						@if(user.name == "" && user.surname == "") {
+								@user.login
+						} else {
+								@user.name @user.surname
+						}
+						</strong>
+				</div>
+				<div id="right_items">
+				@if(user.role == Role.Doctor) {
+					<a href="@routes.Menu.exams">Vyšetrenia</a>
+					<a href="@routes.SignUp.show">Vytvor uzivatela</a>
+				}
+					<a href="@routes.Settings.show">Nastavenia</a>
+					<a href="@routes.Application.logout">Odhlásiť</a>
+				</div>
+			</div>
+		</div>
+
+        <div>
+            <div id="page">
+                <div class="page-header">
+					<h1>@title</h1>
+                </div>
+                
+                <div>
+                    <div id="content">
+                        @content
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <!--p>
+                    <a href="http://www.playframework.org">www.playframework.org</a>
+                </p-->
+            </footer>
+
+        </div>
+        
+    </body>
+</html>

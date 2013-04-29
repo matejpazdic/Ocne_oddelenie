@@ -1,0 +1,29 @@
+@(user: User, form : Form[Settings.SettingsForm])
+
+@main(Html("Nastavenia"), user) {
+    	
+    	<div id="signupform">
+			@helper.form(routes.Settings.submit) {
+					
+					@if(form.hasGlobalErrors) { 
+						<p class="error">
+							@form.globalError.message
+						</p>
+					}
+				<div id="input_elements">
+					<p>Meno<input class="signup" type="text" name="name" placeholder=""  value="@form("name").value"></p>
+					<p>Priezvisko<input class="signup" type="text" name="surname" placeholder=""  value="@form("surname").value"></p>
+					<p>Nové heslo*<input class="signup" type="password" name="newPassword" placeholder="" ></p>
+					<p>Zopakujte heslo*<input class="signup" type="password" name="passwordRe" placeholder=""></p>	
+					
+					<p>Aktuálne heslo*<input class="signup" type="password" name="password" placeholder=""></p>
+				</div>
+					
+				<p class="buttons">
+					<button type="submit">Potvrdiť</button>  <a href="@routes.Menu.show">Zrušiť</a>
+				</p>
+				
+			}
+	</div>
+}
+

@@ -1,0 +1,34 @@
+@(user : User, form: Form[SignUp.SignUpForm])
+
+@main(Html("Nový uživateľ"), user) {
+
+			<div id="signupform">	
+				@helper.form(routes.SignUp.submit) {
+						
+						@if(form.hasGlobalErrors) { 
+							<p class="error">
+								@form.globalError.message
+							</p>
+						}
+					<p/>
+					
+					<div id="input_elements">
+						<p><b>Login</b> <input class="signup" type="text" name="login" placeholder=""> </p>
+						<p>Meno<input class="signup" type="text" name="name" placeholder=""></p>
+						<p>Priezvisko<input class="signup" type="text" name="surname" placeholder=""></p>
+						<p>Titul<input class="signup" type="text" name="titul" placeholder=""></p>
+						<p>Adresa<input class="signup" type="text" name="address" placeholder=""></p>
+						<p><b>Heslo</b><input class="signup" type="password" name="password" placeholder=""></p>
+						<p><b>Zopakujte heslo</b><input class="signup" type="password" name="passwordRe" placeholder=""></p>
+						
+						<p>Rola
+							<input type="radio" name="role" value="0" @if(form("formOfStudy").value == "0") {checked} @if(form("formOfStudy").value == null) {checked} /> Doktor
+							<input type="radio" name="role" value="1" @if(form("formOfStudy").value == "1") {checked} /> Pacient
+						</p>
+					</div>
+					<p class="buttons">
+						<button type="submit">Registrovať</button>  <a href="@routes.Menu.show()">Zrušiť</a>
+					</p>	        
+				}
+			</div>
+}

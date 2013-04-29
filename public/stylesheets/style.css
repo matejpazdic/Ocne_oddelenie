@@ -1,0 +1,274 @@
+body {
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(161,205,239,1) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(161,205,239,1)));
+	background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a1cdef',GradientType=1 );
+}
+
+div#top_panel {
+	background: #fff;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	position:fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    z-index:9999;
+    padding: 5px;
+}
+
+div#panel_items {
+	margin-left :auto;
+	margin-right: 10px;
+	text-align: right;
+}
+
+p.error {
+    color: #c00;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px rgba(0,0,0,.1);
+    text-align: center;
+}
+
+p.success {
+	color: #83BD41; 
+    margin-bottom: 10px;
+    text-shadow: 1px 1px rgba(0,0,0,.1);
+    text-align: center;
+}
+
+p.buttons {
+	margin-top: 20px;
+	text-align: center;
+}
+
+p#radio {
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+input.login {
+    display: block;
+    width: inherit;
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+	margin: 0 0 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div#loginform {
+	margin: 100px auto 0;
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    text-align: center;
+}
+
+div#signupform {
+	margin: 10px auto 0;
+	margin-bottom: 50px;
+    width: 400px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+div#input_elements {
+	margin-left: 30px;
+    margin-right: auto;
+}
+
+p#select {
+	padding: 2px;
+	display:block;
+    margin-left: 30px;
+}
+
+input.signup {    
+	padding: 2px;
+	display:block;
+    margin-left: 30px;
+}
+
+div#page {
+	margin-top: 60px;
+}
+
+div#left_items {
+	text-align: left;
+	display: table-cell;
+    width: 100%;
+    vertical-align: top;
+}
+.logo{
+padding: 20px;
+}
+div#right_items {
+	 display: table-cell;
+	 min-width:500px;
+	 text-align: right;
+}
+
+div#settingsform {
+	margin: 10px auto 0;
+	margin-bottom: 50px;
+    width: 400px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+div#editform {
+	margin: 10px auto 0;
+	margin-bottom: 50px;
+	width: 500px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+
+div#units {
+	font-size: 12px;
+	margin: 10px auto 0;
+    padding: 10px;
+}
+
+div#unit {
+	background: #EDF5FB;
+	margin: 5px;
+	padding: 2px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;	
+	border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    text-align: left;
+}
+
+div#unit_content {
+	display: table-cell;
+    width: 100%;
+    vertical-align: top;
+}
+
+div#control {
+	 display: table-cell;
+	 min-width: 200px;
+}
+
+div#control_delete {
+	 display: table-cell;
+	 min-width: 70px;
+}
+
+div#menu{
+	margin: 10px auto 0;
+	margin-bottom: 50px;
+	width: 800px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+div#tablearea {
+	margin: 10px auto 0;
+	margin-bottom: 50px;
+	width: auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+strong#user {
+	color: #83BD41; 
+	text-shadow: 1px 1px rgba(0,0,0,.1);
+}
+
+table.timetable {
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(161,205,239,1) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(161,205,239,1)));
+	background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(161,205,239,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a1cdef',GradientType=1 );
+	border-spacing : 1px 1px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 13px;
+}
+
+
+td.time {
+	border: 1px solid black;
+	padding: 3px;
+}
+
+td.tableCellE {
+	border: 1px solid black;
+	background: #CEF0AF;
+	padding: 3px;
+}
+
+td.tableCellL {
+	border: 1px solid black;
+	background: #FAC3D7;
+	padding: 3px;
+}
+
+td.tableCellS {
+	border: 1px solid black;
+	background: #FAEDC3;
+	padding: 3px;
+}
+
+td.day {
+	padding: 3px;
+	border: 1px solid black;
+	border: 1px solid black;
+	
+}
+
+tr#riadok {
+	border: 1px solid black;
+}
+
+div.startTime {
+display: table-cell;
+    width: 100%;
+    vertical-align: top;
+    font-size: 9px;
+}
+
+div.endTime {
+	display: table-cell;
+	min-width: 20px;
+	font-size: 9px;
+}
+
+div#teacher {
+	font-size: 9px;
+}
+
+
+
+

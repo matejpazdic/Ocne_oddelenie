@@ -1,0 +1,34 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Prihlasenie
+GET		/login						controllers.Application.login()
+POST	/login						controllers.Application.authenticate()
+GET		/logout						controllers.Application.logout()
+
+# Registracia
+GET     /signup                     controllers.SignUp.show()
+POST    /signup                     controllers.SignUp.submit()
+
+# Hlavne menu
+GET		/menu						controllers.Menu.show()
+GET		/menu/add					controllers.Menu.add()
+POST	/menu/add					controllers.Menu.addSubmit()
+GET		/menu/add/exam/:patient/:order			controllers.Menu.addExam(patient: String, order: Long)
+POST	/menu/add/exam/			controllers.Menu.addExamSubmit(patient: String, order: Long)
+
+GET		/menu/exam					controllers.Menu.exams()
+GET		/menu/:id/delete			controllers.Menu.delete(id : Long)
+
+# Nastavenia
+GET		/settings					controllers.Settings.show()
+POST	/settings					controllers.Settings.submit()
+
+#GET		/service					controllers.Application.service()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

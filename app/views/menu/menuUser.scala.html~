@@ -1,0 +1,60 @@
+@(user: User, order : Order)
+
+@main(Html("Vaša karta"), user) {
+    
+    <div id="menu">
+        
+		@if(flash.contains("table_removed")) {
+					<p class="success">
+						@flash.get("table_removed")
+					</p>
+		}
+		
+		@if(flash.contains("settings_successful")) {
+					<p class="success">
+						@flash.get("settings_successful")
+					</p>
+		}	
+		
+		<h3 align="center">Objednávka</h3>
+		@if(order != null) {
+			<div id="unit">	
+				<div id="unit_content">
+				<b>@order.getDate()</b>	
+			</div>
+				
+			<div id="control">
+				<a href="@routes.Menu.delete(order.id)">Zmazať</a>
+			</div>
+		} else {
+			<div id="unit">	
+				<div id="unit_content">
+				<b>Nemáte žiadnu objednávku</b>	
+			</div>
+			<div id="control">
+				<a href="@routes.Menu.add()">Pridať</a>
+			</div>
+			
+		}
+		</div>
+		<h3 align="center">Vyšetrenia</h3>
+		@for(exam <- Exam.findInvolving(user.login)) {
+			<div id="unit">	
+				<div id="unit_content">
+					<b>@exam.findings</b>
+					- @exam.getDate()
+				</div>	
+			</div>
+		} 
+		
+		<h3 align="center">Dioptrie</h3>
+		@for(dio <- Dioptrie.findInvolving(user.login)) {
+			<div id="unit">	
+				<div id="unit_content">
+					<b>@dio.details</b>
+					- @dio.getDate()
+				</div>	
+			</div>
+		}
+    
+}
